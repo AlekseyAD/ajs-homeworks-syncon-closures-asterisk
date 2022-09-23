@@ -19,8 +19,8 @@
   
  //console.log(characters);
   
-
-export default function setUpAttacks(items, shield = true) {
+ export default setUpAttacks;
+ function setUpAttacks(items, shield = true) {
   const result = [];
 
   function funcWithShield(i) {

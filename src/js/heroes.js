@@ -1,4 +1,5 @@
-export const characters = [
+export {characters} 
+const characters = [
     { name: "Маг", health: 100 },
     { name: "Лучник", health: 80 },
     { name: "Мечник", health: 10 },
@@ -8,7 +9,7 @@ export const characters = [
   
 //   attacks[2](26);
   
-//   console.log(characters);
+   console.log(characters);
   
   
   

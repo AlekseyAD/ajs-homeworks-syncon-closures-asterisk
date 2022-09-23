@@ -1,7 +1,7 @@
 import setUpAttacks from "../setupattacks";
-import * as characters from "../heroes";
+import {characters} from "../heroes";
 
-//console.log(typeof characters);
+console.log(typeof characters);
  // const characters = [
  //   { name: "Маг", health: 100 },
  //   { name: "Лучник", health: 80 },
