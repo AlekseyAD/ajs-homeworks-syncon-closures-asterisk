@@ -1,34 +1,27 @@
-import setUpAttacks from "../setupattacks";
 import {characters} from "../heroes";
+import setUpAttacks from "../setupattacks";
 
-console.log(typeof characters);
- // const characters = [
- //   { name: "Маг", health: 100 },
- //   { name: "Лучник", health: 80 },
- //   { name: "Мечник", health: 10 },
-//  ];
-console.log(typeof characters);
-test("Атака при наличии бонуса", () => {
-  const received = setUpAttacks(characters, true)[2](10);
+test("Атака cо Щитом", () => {
+  const received = setUpAttacks(characters, true)[2](5);
   const expected = [
-    { name: "Маг", health: 97 },
-    { name: "Лучник", health: 77 },
-    { name: "Мечник", health: 6 },
+    { name: "Маг", health: 98 },
+    { name: "Лучник", health: 78 },
+    { name: "Мечник", health: 4 },
   ];
 
   expect(received).toEqual(expected);
 });
 
-// test("Атака без бонуса", () => {
+test("Атака без Щита", () => {
    
-//   const received = setUpAttacks(characters, false)[2](5);
-//   const expected = [
-//     { name: 'Маг', health: 100 },
-//     { name: 'Лучник', health: 80 },
-//     { name: 'Мечник', health: 5 },
-//   ];
-//   expect(received).toEqual(expected);
-// });
+  const received = setUpAttacks(characters, false)[2](5);
+  const expected = [
+    { name: 'Маг', health: 98 },
+    { name: 'Лучник', health: 78 },
+    { name: 'Мечник', health: 0 },
+  ];
+  expect(received).toEqual(expected);
+});
 
 // test("Атака при наличии бонуса на массив с выбывшим персонажем", () => {
   

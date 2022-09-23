@@ -1,27 +1,15 @@
-//import * as characters from "./heroes";
-//console.log(characters);
-
-//const items = characters;
-//const arr = result
-
-//console.log(setUpAttacks(characters));
-
-
-//    const characters = [
-//     { name: "Маг", health: 100 },
-//     { name: "Лучник", health: 80 },
-//     { name: "Мечник", health: 10 },
-//   ];
-
-//   const attacks = setUpAttacks(characters);
-  
-//    attacks[2](26);
-  
- //console.log(characters);
-  
+import {characters} from "./heroes";
  export default setUpAttacks;
+
+
+ const attacks = setUpAttacks(characters);
+  attacks[2](5);
+ console.log(characters);
+
+
  function setUpAttacks(items, shield = true) {
-  const result = [];
+
+    const result = [];
 
   function funcWithShield(i) {
     return function (damage) {
@@ -46,25 +34,25 @@
     };
   }
 
-  //  if (!shield) {
-  //     for (let i = 0; i < items.length; i += 1) {
-  //       result.push(funcNotShield(i));
-  //     }
-  //   } else {
+   if (!shield) {
+      for (let i = 0; i < items.length; i += 1) {
+        result.push(funcNotShield(i));
+      }
+    } else {
   for (let i = 0; i < items.length; i += 1) {
     result.push(funcWithShield(i));
-    //     }
-    //   }
+        }
+      }
 
-    //   function funcNotShield(i) {
-    //     return function (damage) {
-    //       if (items[i].health > 0 && items[i].health > damage) {
-    //         items[i].health = items[i].health - damage;
-    //       } else {
-    //         items[i].health = 0;
-    //       }
-    //       return items;
-    //  };
+      function funcNotShield(i) {
+        return function (damage) {
+          if (items[i].health > 0 && items[i].health > damage) {
+            items[i].health = items[i].health - damage;
+          } else {
+            items[i].health = 0;
+          }
+          return items;
+     };
   }
 
   return result;
