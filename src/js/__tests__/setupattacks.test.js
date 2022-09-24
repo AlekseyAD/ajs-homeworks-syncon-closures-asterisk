@@ -1,24 +1,32 @@
-import {characters} from "../heroes";
 import setUpAttacks from "../setupattacks";
 
 test("Атака cо Щитом", () => {
+  const characters = [
+    { name: 'Маг', health: 100 },
+    { name: 'Лучник', health: 80 },
+    { name: 'Мечник', health: 10 },
+  ];
   const received = setUpAttacks(characters, true)[2](5);
   const expected = [
-    { name: "Маг", health: 98 },
-    { name: "Лучник", health: 78 },
-    { name: "Мечник", health: 4 },
+    { name: "Маг", health: 99 },
+    { name: "Лучник", health: 79 },
+    { name: "Мечник", health: 7 },
   ];
 
   expect(received).toEqual(expected);
 });
 
 test("Атака без Щита", () => {
-   
+  const characters = [
+    { name: 'Маг', health: 100 },
+    { name: 'Лучник', health: 80 },
+    { name: 'Мечник', health: 10 },
+  ];
   const received = setUpAttacks(characters, false)[2](5);
   const expected = [
-    { name: 'Маг', health: 98 },
-    { name: 'Лучник', health: 78 },
-    { name: 'Мечник', health: 0 },
+    { name: 'Маг', health: 100 },
+    { name: 'Лучник', health: 80 },
+    { name: 'Мечник', health: 5 },
   ];
   expect(received).toEqual(expected);
 });
